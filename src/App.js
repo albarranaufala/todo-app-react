@@ -7,7 +7,7 @@ export default function App() {
         Todo App
       </h1>
       <p className="text-center mb-8">
-        Build by Albarra with ReactJS
+        Built by Albarra with ReactJS
       </p>
       <TodoApp />
     </div>
