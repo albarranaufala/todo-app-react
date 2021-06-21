@@ -8,6 +8,6 @@ export default function TodoList({ todos, toggleIsDoneTodo, removeTodo, classNam
       </ul>
     )
   } else {
-    return (<></>)
+    return (<p className={`italic text-center ${className}`}>Anda tidak memiliki tugas</p>)
   }
 }
