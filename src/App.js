@@ -1,40 +1,15 @@
-import { useState } from 'react';
-import TodoInput from './components/TodoInput';
-import TodoList from './components/TodoList';
+import TodoApp from './components/TodoApp'
 
 export default function App() {
-  const [todos, setTodos] = useState([{
-    id: 1,
-    text: 'Mandi',
-    isDone: true
-  }])
-
-  const addTodo = todo => {
-    const id = todos.length ? todos[todos.length - 1].id + 1 : 1
-    setTodos([...todos, {
-      id,
-      text: todo,
-      isDone: false
-    }])
-  }
-
-  const toggleIsDoneTodo = id => {
-    setTodos(todos.map(todo => {
-      if (todo.id === id) {
-        return { ...todo, isDone: !todo.isDone }
-      }
-      return todo
-    }))
-  }
-
-  const removeTodo = id => {
-    setTodos(todos.filter(todo => id !== todo.id))
-  }
-
   return (
-    <div>
-      <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} toggleIsDoneTodo={toggleIsDoneTodo} removeTodo={removeTodo} />
+    <div className="flex flex-col items-center bg-gray-100 min-h-screen p-4">
+      <h1 className="text-center text-4xl uppercase font-bold mt-6">
+        Todo App
+      </h1>
+      <p className="text-center mb-8">
+        Build by Albarra with ReactJS
+      </p>
+      <TodoApp />
     </div>
-  );
+  )
 }
